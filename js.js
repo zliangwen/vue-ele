@@ -1,9 +1,16 @@
+ // 判断参数不为空
+ckeckNotNull: function(value){
+    if (value != null && value != "" && value.length > 0) {
+        return true;
+    }
+    return false;
+};
  //本地存储搜索最新十条数据
 addLocalStorage: function (item) {
     var that = this;
     var arr=[];
     var storageDataList = localStorage.getItem("searchDataList");
-    if (_g.ckeckNotNull(storageDataList)) {
+    if (ckeckNotNull(storageDataList)) {
         arr=JSON.parse(storageDataList);
         console.log(arr)
     }
@@ -27,4 +34,4 @@ addLocalStorage: function (item) {
     }else{
         this.show = false
     }
-},
+}
